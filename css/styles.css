@@ -189,7 +189,8 @@ ul {
   margin-bottom: 30px;
 }
 .hero-button,
-.form-button {
+.form-button,
+.footer-button {
   display: block;
   width: 200px;
   height: 50px;
@@ -467,7 +468,7 @@ ul {
 .filter-hover:focus .filter-desc-overlay {
   transform: translateY(0);
 }
-/* footer */
+/* ---------------footer---------------- */
 .footer {
   background-color: #2f303a;
   padding-top: 60px;
@@ -504,13 +505,14 @@ ul {
 .join {
   margin-left: 70px;
   margin-top: 12px;
-  color: var(--primary-white-color);
 }
-.join .title {
+.join .title,
+.subscribe .title {
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.03em;
   text-transform: uppercase;
+  color: var(--primary-white-color);
 }
 .join-list {
   display: flex;
@@ -538,6 +540,41 @@ ul {
   background-color: var(--accent-color);
   outline: none;
 }
+.subscribe {
+  margin-left: 93px;
+  margin-top: 12px;
+}
+.subscribe .title {
+  margin-bottom: 20px;
+}
+.form-footer {
+  display: flex;
+  align-items: center;
+}
+.input-footer {
+  width: 358px;
+  height: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+  border-radius: 4px;
+  background-color: #2f303a;
+  cursor: pointer;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.field-footer:focus-within > .input-footer {
+  border-color: var(--accent-color);
+  outline: none;
+}
+.footer-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 12px;
+}
+.footer-button .icon {
+  margin-left: 10px;
+}
+
 /*------------ Modal-----------  */
 .backdrop {
   position: fixed;
@@ -571,7 +608,7 @@ ul {
   padding: 0;
   margin: 0;
   position: absolute;
-  top: 9px;
+  top: 8px;
   right: 8px;
   fill: var(--icons-color);
   border: none;
@@ -580,9 +617,13 @@ ul {
 }
 .modal-button .icon {
   display: block;
+  fill: #000;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.form-modal {
+.modal-button .icon:hover {
+  fill: var(--accent-color);
 }
+/* ------------------Form---------------- */
 .form-title {
   margin-bottom: 30px;
   font-weight: bold;
@@ -604,6 +645,7 @@ ul {
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
   cursor: pointer;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .form-label {
   position: absolute;
@@ -620,13 +662,15 @@ ul {
   top: 50%;
   transform: translateY(-50%);
   cursor: pointer;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 .form-input.comments {
   height: 120px;
   padding: 12px 16px;
   resize: none;
 }
-.form-field.comments{
+.form-field.comments {
   margin-bottom: 20px;
 }
 .form-field:focus-within > .icon {
@@ -639,24 +683,24 @@ ul {
 .form-button {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
-.form-label-checkbox, .checkbox-link{
+.form-label-checkbox,
+.checkbox-link {
   padding-left: 24px;
   font-size: 14px;
-line-height: 1.71;
-letter-spacing: 0.03em;
-
+  line-height: 1.71;
+  letter-spacing: 0.03em;
 }
-.checkbox-link{
+.checkbox-link {
   display: inline;
   text-decoration-line: underline;
   color: var(--accent-color);
   margin: 0;
-  padding: 0; 
+  padding: 0;
 }
 .icon-unchecked {
   position: absolute;
   top: 50%;
-  
+
   transform: translateY(-50%);
   width: 16px;
   height: 15px;
@@ -664,19 +708,20 @@ letter-spacing: 0.03em;
   border: 2px solid #2a2a2a;
   border-radius: 2px;
   background: #ffffff;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.icon-checked{
+.icon-checked {
   position: absolute;
   top: 50%;
-  
+
   transform: translateY(-50%);
 }
-.form-checkbox:checked ~ .icon-unchecked{
+.form-checkbox:checked ~ .icon-unchecked {
   background: transparent;
   border: transparent;
 }
-.form-field.checkbox{
-padding-left:12px; 
+.form-field.checkbox {
+  padding-left: 12px;
   margin-bottom: 30px;
 }
 .form-checkbox {
@@ -688,3 +733,4 @@ padding-left:12px;
   padding: 0;
   clip: rect(0 0 0 0);
   overflow: hidden;
+}
